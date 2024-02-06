@@ -1,0 +1,566 @@
+*{
+    font-family: poppins;
+}
+
+body{
+    background-position:center;
+    /* background: url(../img/man.jpg); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background: linear-gradient(to right,  #010124, #000000); */
+    background: azure;
+    margin: auto;
+    box-sizing: border-box;
+    padding: auto;
+    font-family: poppins;
+    overflow: hidden;
+    color: #010124;
+}
+
+button{
+    background: none;
+    border: none;
+    border-radius: none;
+    cursor: pointer;
+}
+
+.container{
+    display: flex;
+    gap: 20px;
+    /* margin: 20px; */
+}
+
+
+
+
+i{
+    color: #010124;
+}
+
+.error{
+    font-weight:bold;
+    font-size:12px;
+    color:firebrick;
+    text-align:center;
+  }
+
+.container .sidebar{
+    display: block;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    margin: 10% 0px ;
+    margin-left: 30px;
+    margin-right: 20rem;
+}
+
+
+.sidebar .sidebtn{
+    margin: 5px;
+}
+.sidebar .sidebtn a .reg{
+    margin-bottom: 10px;
+    background: #ffcc00;
+    color: #010124;
+}
+
+.sidebar .sidebtn a .log{
+    background: #010124;
+    border: 1px solid #ffcc00;
+    color: #ffcc00;
+}
+
+.todo-container{
+    margin: 20px 0;
+    box-sizing: border-box;
+    background: white;
+    width: 28rem;
+    height: 30rem;
+    padding: 0;
+    display: block;
+    border: none;
+    border-radius: 10px;
+    position: relative;
+}
+.todo-header .logout{
+    display: block;
+    position: relative;
+    left: 120px;
+    z-index: 999;
+}
+.logout{
+    margin: 2px 2px;
+    text-decoration: underline;
+    font-style: italic;
+    color: #010124;
+    font-weight: 600;
+}
+
+.sign{
+    margin: 130px 0;
+    box-sizing: border-box;
+    background: white;
+    width: 20rem;
+    height: 21rem;
+    padding: 0;
+    border: none;
+    border-radius: 10px;
+    position: relative;
+    padding: 20px;
+}
+
+.login{
+    margin: 130px 0;
+    box-sizing: border-box;
+    background: white;
+    width: 20rem;
+    height: 15rem;
+    padding: 0;
+    border: none;
+    border-radius: 10px;
+    position: relative;
+    padding: 20px;
+}
+
+
+.btn{
+    width: 100%;
+    margin: 0;
+    background: #010124;
+    color: #ffcc00;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition-duration: 2s;
+    height: 35px;
+    outline: none;
+    border-radius: 5px;
+}
+form p{
+    font-size: 13px;
+}
+
+.btn:hover{
+    transition: all ease-in-out;
+    background: #000000;
+}
+
+.sign form label{
+    font-style: italic;
+    font-weight: 500;
+    color: #010124;/*#e6b800*/
+}
+
+
+
+.items .no-task{
+    position: relative;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 60px;
+    font-size: 20px;
+    color: rgb(79, 78, 78);
+}
+
+.no-task i{
+    font-size: 100px;
+    color: rgb(79, 78, 78);
+}
+
+span{
+    color: red;
+}
+
+.sign form .input{
+    width: 100%;
+    margin-bottom: 15px;
+    height: 35px;
+    outline: none;
+    border: 0.3px solid #010124;
+    border-radius: 5px;
+    padding-left: 4px;
+    font-style: italic;
+    /* border-left: 2px solid #010124;
+    border-bottom: 2px solid #010124; */
+}
+
+
+.todo-container .todo-header{
+    display: block;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    text-align: center;
+    margin: 20px;
+}
+.todo-header .todo-profile .profile-img i{
+    font-size: 100px;
+    margin: auto;
+    justify-content: center;
+    display: block;
+    /* margin-left: 10px; */
+    align-items: center;
+    position: relative;
+}
+.todo-header .todo-profile h3{
+    font-size: 18px;
+    font-style: italic;
+}
+
+.todo-container .todo-body{
+    background: #010124;
+    /* background: #ffcc00; */
+    padding-top: 30px;
+    /* height: ; */
+    height: 100%;
+    color: white;
+    width: 100%;
+    border: none;
+    border-top-right-radius: 80px;
+    border-top-left-radius: 80px;
+    position: absolute;
+    box-sizing: border-box;
+}
+
+
+.todo-body .items{
+    overflow-y: scroll;
+    width: 100%;
+    height: 82%; 
+    overflow-y: scroll; 
+    scrollbar-width: thin; 
+}
+
+
+.items::-webkit-scrollbar {
+    width: 0.1px;
+}
+
+.items::-webkit-scrollbar-thumb {
+    background-color: #888; 
+}
+
+.items::-webkit-scrollbar-track {
+    background-color: #eee;
+}
+
+
+.todo-container .todo-body .todo-item{
+    display: flex;
+    margin: 25px;
+    margin-top: 25px;
+    gap: 10px;
+    position: relative;
+}
+.items .todo-item .item{
+    margin-right: 55px;
+    align-items: justify;
+}
+
+.todo-item .action{
+    position: absolute;
+    display: flex;
+    margin-left: 85%;
+    gap: 10px;
+    cursor: pointer;
+    color: white;
+}
+
+.action a i{
+    color: white;
+}
+
+.items .underline{
+    background: #ffcc00;
+    height: .1px;
+    width: 90%;
+    margin: auto;
+    margin-top: -20px;
+    justify-content: center;
+    position: relative;
+}
+
+
+.todo-body .new-task{
+    position: relative;
+    margin: auto;
+    background: white;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #ffcc00;
+    border-radius: 100%;
+    bottom: -10px;
+}
+.new-task button{
+    text-align: center;
+    margin: auto;
+    font-size: 20px;
+    display: grid;
+}
+
+
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+}
+.modal {
+    display: none;
+    position: fixed;
+    bottom: 180px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+.modal form input{
+    height: 35px;
+    width: 20rem;
+    background: #eee;
+    border: 1px dashed #ffcc00;
+}
+
+.modal button i{
+    color: white;
+    font-weight: 900;
+    font-size: 20px;
+}
+.modal form button{
+    background: #ffcc00;
+    border: none;
+    color: #010124;
+    font-size: 20px;
+    font-weight: 600;
+    height: 35px;
+}
+
+
+.acc-opt{
+    display: none;
+}
+
+
+/* =============RESPONSIVE===================== */
+
+
+@media only screen and (max-width: 1500px) {
+  
+    .todo-container .todo-body{
+        background: #010124;
+        /* background: #ffcc00; */
+        padding-top: 30px;
+        /* height: ; */
+        height: 25rem;
+        color: white;
+        width: 100%;
+        border: none;
+        border-top-right-radius: 80px;
+        border-top-left-radius: 80px;
+        position: absolute;
+        box-sizing: border-box;
+    }
+    
+}
+@media only screen and (max-width: 1200px) {
+    /* body{
+        background: green;
+    } */
+    .container .sidebar{
+        display: block;
+        justify-content: center;
+        position: relative;
+        align-items: center;
+        margin: 10% 0px ;
+        margin-left: 15px;
+        margin-right: 10rem;
+    }
+    .todo-container{
+        margin: 20px 0;
+        box-sizing: border-box;
+        background: white;
+        width: 28rem;
+        height: 27rem;
+        padding: 0;
+        border: none;
+        border-radius: 10px;
+        position: relative;
+    }
+  }
+
+@media only screen and (max-width: 1000px) {
+    /* body{
+        background: pink;
+    } */
+    
+.container .sidebar{
+    display: block;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    margin: 10% 0px ;
+    margin-left: 2px;
+    margin-right: 2rem;
+}
+    .todo-container{
+        margin: 20px 0;
+        box-sizing: border-box;
+        background: white;
+        width: 28rem;
+        height: 26rem;
+        padding: 0;
+        border: none;
+        border-radius: 10px;
+        position: relative;
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    body{
+        background-position:center;
+        /* background: url(../img/man.jpg); */
+        background-repeat: no-repeat;
+        background-size: cover;
+        background: azure;
+        /* background: linear-gradient(to right,  #010124, #000000); */
+        margin: auto;
+        box-sizing: border-box;
+        padding: auto;
+        font-family: poppins;
+        overflow: hidden;
+        color: #010124;
+    }
+  
+.container .sidebar{
+    display: block;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    margin: 20% 0px ;
+    margin-left: 4px;
+    margin-right: 0px;
+}
+
+.sidebar img{
+    width: 250px;
+}
+  
+    
+  }
+
+  @media only screen and (max-width: 700px) {
+    body{
+        background-position:center;
+        /* background: url(../img/man.jpg); */
+        background-repeat: no-repeat;
+        background-size: cover;
+        background: #010124;
+        /* background: linear-gradient(to right,  #010124, #000000); */
+        margin: auto;
+        box-sizing: border-box;
+        padding: auto;
+        font-family: poppins;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        color: #010124;
+    }
+
+    .sign{
+        margin: auto;
+        top: 150px;
+        box-sizing: border-box;
+        background: white;
+        width: 20rem;
+        height: 21rem;
+        padding: 0;
+        border: none;
+        border-radius: 10px;
+        justify-content: center;
+        position: relative;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .login{
+        margin: auto;
+        top: 150px;
+        box-sizing: border-box;
+        background: white;
+        width: 20rem;
+        height: 16rem;
+        padding: 0;
+        border: none;
+        border-radius: 10px;
+        justify-content: center;
+        position: relative;
+        align-items: center;
+        padding: 20px;
+    }
+
+    /* h3{
+        color: white;
+    }
+
+    .profile-img i{
+        color: white;
+    } */
+.container .sidebar{
+    display: none;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    margin: 10% 0px ;
+    margin-left: 0px;
+    margin-right: 0rem;
+}
+    .todo-container{
+        margin: auto;
+        box-sizing: border-box;
+        background: white;
+        /* background: linear-gradient(to right,  #010124, #000000); */
+        width: 100%;
+        /* height: 100vh; */
+        padding: 0;
+        border: none;
+        border-radius: 10px;
+        position: relative;
+    }
+    
+    .todo-container .todo-body{
+        background: #010124;
+        /* background: #ffcc00; */
+        /* height: ; */
+        height: 100%;
+        width: 100%;
+        border: none;
+        border-top-right-radius: 80px;
+        border-top-left-radius: 80px;
+        position: absolute;
+    }
+
+
+    .acc-opt{
+        display: block;
+        margin-top: -5px;
+        font-family: poppins;
+    }
+    
+    .todo-body .items{
+        overflow-y: scroll;
+        width: 100%;
+        height: 100%; 
+        scrollbar-width: thin; 
+    }
+    
+
+  }

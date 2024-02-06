@@ -1,0 +1,115 @@
+{% extends "temp/base.html" %}
+{% block  content %}
+
+{% load static %}
+    <div class="container">
+      <div class="sidebar">
+        <img src="{%static 'img/side.png'%}" alt="" srcset="" width="350" />
+        {% if authenticated %}
+          authenticated
+        {% else %}
+      <div class="sidebtn">
+        <a href="{%url 'register'%}"><button class="btn reg">Register</button></a>
+        <a href="{%url 'login'%}"><button class="btn log">Log in</button></a>
+      </div>
+      {% endif %}
+      </div>
+
+      <div class="todo-container">
+         
+        <div class="todo-header">
+            <a class="logout" href="{% url 'logout'%}">Log out</a>
+          <div class="todo-profile">
+            {% comment %} <a  href="{% url 'logout'%}">Log out</a> {% endcomment %}
+            <div class="profile-img">
+                <i class="fas fa-user"></i>
+            </div>
+            <h3>Welcome <span style="text-transform:capitalize;">{{user}}</span></h3>
+            <p style='font-size:13px; color:gray; margin-top:-20px;'>  You have <b>{{task_count}}</b> TODO Task</p>
+            {% if messages %}
+            {% for message in messages %}
+              <div class="error"> {{message}}</div>
+            {% endfor %}
+          
+          {% endif %}
+          </div>
+        </div>
+        <div class="todo-body">
+          <div class="items">
+   
+            {% if get_task %}
+
+          {% for task in get_task %}
+            <div class="item-list">
+              <div class="todo-item">
+                <input type="checkbox" name="" id="" style="background: #010124;" />
+                <div class="item">{{task.todo_name}}</div>
+                <div class="action">
+                  {% comment %} <form> {% endcomment %}
+                    <a href="{%url 'edit' task.id%}"><button><i class="fas fa-edit"></i></button></a>
+                    <a href="{%url 'delete' task.todo_name%}"><button><i class="fas fa-trash"></i></button></a>
+                  {% comment %} </form> {% endcomment %}
+                </div>
+              </div>
+              <div class="underline"></div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <div class="no-task">
+              <i  class="fas fa-tasks"></i><br>
+              <p> No task Available</p>
+            </div>
+
+            {% endif %}
+           
+          </div>
+
+          <div class="new-task" id="openModalBtn">
+            <button ><i class="fas fa-plus"></i></button>
+          </div>
+      
+          {% comment %} ===== CODE TO ADD NEW TASK {% endcomment %}
+          <div class="overlay" id="overlay"></div>
+          <div class="modal" id="modal">
+            <button onclick="closeModal()"><i class='fas fa-times'></i></button>
+              <form id="userInputForm" method='POST'>
+                {% csrf_token %}
+                  <input type="text" id="inputField" name="addTask">
+                 
+                  <button type="submit" onclick="submitForm()">Add</button>
+              </form>
+          </div>
+          {% comment %} ===== CODE TO ADD NEW TASK END {% endcomment %}
+
+
+        </div>
+      </div>
+    </div>
+
+
+
+    <script>
+        // Function to open the modal
+        function openModal() {
+            document.getElementById('modal').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        // Function to handle form submission (you can replace this with your own logic)
+        function submitForm() {
+            //alert('Form submitted!');
+            closeModal(); // Close the modal after submission
+        }
+
+        // Event listener for the button click
+        document.getElementById('openModalBtn').addEventListener('click', openModal);
+    </script>
+
+  
+{% endblock content %}

@@ -1,0 +1,38 @@
+{% extends "temp/base.html" %}
+{% block  content %}
+{% load static %}
+
+    <div class="container">
+      <div class="sidebar">
+        <img src="{%static 'img/side.png'%}" alt="" srcset="" width="350" />
+        <div class="sidebtn">
+            <!-- <button class="btn"><a href="sign-up.html">Register</a></button> -->
+            <a href="{%url 'register'%}"><button class="btn reg">Register</button></a>
+        </div>
+      </div>
+
+      <div class=" sign login">
+        {% if messages %}
+          {% for message in messages %}
+            <div class="error"> {{message}}</div>
+          {% endfor %}
+        
+        {% endif %}
+        <form action="" method="post">
+          {% csrf_token %}
+            
+            <label for="name">Username:<span>*</span></label><br>
+            <input class="input" type="text" name="name" value="" required placeholder="Enter your Username"><br>
+
+            <!-- <label for="name">Email:<span>*</span></label><br>
+            <input class="input" type="email" name="email" required placeholder="example@gmail.com"><br> -->
+
+            <label for="name">Password:<span>*</span></label><br>
+            <input class="input" type="password" name="password" required placeholder="XXXXXXXX"><br>
+            <p class="acc-opt"> Don't have an account? <a href="{%url 'register'%}"> Sign up here</a> </p>
+            <input type="submit" class="btn" value="LOG IN">
+            <!-- <p>Don't have an account? register <a href="sign-up.html">here</a></p> -->
+        </form>
+      </div>
+    </div>
+{% endblock content %}
