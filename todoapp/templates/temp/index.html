@@ -47,7 +47,7 @@
                 <div class="action">
                   {% comment %} <form> {% endcomment %}
                     <a href="{%url 'edit' task.id%}"><button><i class="fas fa-edit"></i></button></a>
-                    <a href="{%url 'delete' task.todo_name%}"><button><i class="fas fa-trash"></i></button></a>
+                    <a href="{%url 'delete' task.todo_name%}" onclick="deletemessage()"><button><i class="fas fa-trash"></i></button></a>
                   {% comment %} </form> {% endcomment %}
                 </div>
               </div>
@@ -89,6 +89,11 @@
 
 
     <script>
+      // TO SHOW DELETE MESSAGE TO user
+        function deletemessage(){
+          toastr.info('Task Deleted');
+        }
+
         // Function to open the modal
         function openModal() {
             document.getElementById('modal').style.display = 'block';
