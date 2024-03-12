@@ -277,7 +277,7 @@ span{
     position: absolute;
     display: flex;
     margin-left: 85%;
-    gap: 10px;
+    gap:-10px;
     cursor: pointer;
     color: white;
 }
@@ -577,4 +577,13 @@ span{
     }
     
 
+  }
+
+
+
+  @media only screen and (max-width: 500px){
+    body{
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
   }
