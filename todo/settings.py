@@ -75,12 +75,39 @@ WSGI_APPLICATION = 'todo.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+import ssl
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'djongo',
+        'NAME': 'tododb',
+        'ENFORCE_SCHEMA': False,
+        'CLIENT': {
+            'host': 'mongodb+srv://olamidedevops:4De13nmkL13qKdbo@todoapp.scjkzt4.mongodb.net/tododb?retryWrites=true&w=majority&ssl=true',
+            'ssl': True,
+            'username': 'olamidedevops',
+            'password': '4De13nmkL13qKdbo',
+            'authMechanism': 'SCRAM-SHA-1',
+            # 'ssl_cert_reqs': ssl.CERT_NONE,
+            'socketTimeoutMS': 100000,
+            'connectTimeoutMS': 100000,
+            
+        }
     }
 }
+
+# from pymongo import MongoClient
+
+# client = MongoClient("mongodb+srv://olamidedevops:4De13nmkL13qKdbo@todoapp.scjkzt4.mongodb.net/tododb?retryWrites=true&w=majority&ssl=true")
+# db = client.test_database
+
+# print(db.list_collection_names())
 
 
 # Password validation
@@ -125,6 +152,7 @@ STATIC_ROOT = os.path.join(BASE_DIR/ 'static')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+AUTH_USER_MODEL = 'todoapp.CustomUser'
 
 LOGIN_URL = 'login'
 
@@ -136,3 +164,4 @@ EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_HOST_USER='adeblessinme4u@gmail.com' 
 EMAIL_HOST_PASSWORD ='qvpx txbb mrji blpz' 
+EMAIL_DEBUG = True
